@@ -1,7 +1,7 @@
 {
   "name": "react-native-clippathview",
   "title": "React Native ClipPath",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TODO",
   "main": "index.js",
   "files": [
@@ -9,6 +9,8 @@
     "android",
     "index.js",
     "ios",
+    "src",
+    "index.d.ts",
     "react-native-clippath.podspec"
   ],
   "scripts": {
@@ -20,7 +22,12 @@
     "baseUrl": "https://github.com/github_account/react-native-clippath"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "clippath",
+    "clip",
+    "react",
+    "android",
+    "ios"
   ],
   "author": {
     "name": "Juan J LF",
@@ -36,5 +43,8 @@
   "devDependencies": {
     "react": "^16.9.0",
     "react-native": "^0.61.5"
+  },
+  "dependencies": {
+    "svgpath": "^2.3.1"
   }
 }
