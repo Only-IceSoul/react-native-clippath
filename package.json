@@ -1,7 +1,7 @@
 {
   "name": "react-native-clippathview",
   "title": "React Native ClipPath",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ClipPath Android Web IOS",
   "main": "index.js",
   "files": [
