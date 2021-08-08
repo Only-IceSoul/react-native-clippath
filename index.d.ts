@@ -8,7 +8,7 @@ interface ClipPathViewProps extends ViewProps {
         d:string
         viewBox:number[] 
     }
-    pathScale?:{ x:number,y:number }
+    pathScale?:number
     pathRotation?: number
     pathTranslation?:{
         dx:number,

@@ -2,8 +2,8 @@
 
 
 import { Platform,requireNativeComponent } from 'react-native';
-// import DrawableViewWeb from './src/DrawableViewWeb'
+import ClipPathWeb from './src/ClipPathWeb'
 
- const ClipPathView = Platform.OS == 'android' || Platform.OS == 'ios' ? requireNativeComponent('ClipPath',null) : null
+ const ClipPathView = Platform.OS == 'android' || Platform.OS == 'ios' ? requireNativeComponent('ClipPath',null) : ClipPathWeb
 
  export default ClipPathView

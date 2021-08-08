@@ -37,18 +37,16 @@ class ClipPathViewManager extends ViewGroupManager<ClipPathView> {
             v[3] = (float)viewBox.getDouble(3);
         }
         view.getDrawable().setSvgPath(d,view.getResources().getDisplayMetrics().density, v,"xMidYMid",ShapeDrawable.VIEW_BOX_MEET);
-        invalidate();
+        view.invalidate();
     }
     @ReactProp(name = "pathRotation",defaultFloat = 0f)
     public void setPathRotation(ClipPathView view , float r){
         view.getDrawable().setPathRotation(r);
         view.invalidate();
     }
-    @ReactProp(name = "pathScale")
-    public void setPathScale(ClipPathView view,ReadableMap v){
-        float  x = (float)ModUtil.getDouble(v,"x",1.0);
-        float y = (float)ModUtil.getDouble(v,"y",1.0);
-        view.getDrawable().setPathScale(x,y);
+    @ReactProp(name = "pathScale",defaultFloat = 1f)
+    public void setPathScale(ClipPathView view,float v){
+        view.getDrawable().setPathScale(v,v);
         view.invalidate();
     }
 

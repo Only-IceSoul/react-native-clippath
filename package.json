@@ -1,8 +1,8 @@
 {
   "name": "react-native-clippathview",
   "title": "React Native ClipPath",
-  "version": "0.0.2",
-  "description": "TODO",
+  "version": "0.0.3",
+  "description": "ClipPath Android Web IOS",
   "main": "index.js",
   "files": [
     "README.md",
@@ -18,8 +18,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-clippath.git",
-    "baseUrl": "https://github.com/github_account/react-native-clippath"
+    "url": "git+https://github.com/Only-IceSoul/react-native-clippath.git",
+    "baseUrl": "https://github.com/Only-IceSoul/react-native-clippath"
   },
   "keywords": [
     "react-native",
@@ -27,7 +27,9 @@
     "clip",
     "react",
     "android",
-    "ios"
+    "ios",
+    "web",
+    "path"
   ],
   "author": {
     "name": "Juan J LF",
