@@ -92,12 +92,14 @@ public class SVGPathParser {
             if (!has_prev_cmd && first_char != M && first_char != m) {
                        // The first segment must be a MoveTo.
                 throw ClipPathError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
-                   }
+            }
 
                    // TODO: simplify
                    var is_implicit_move_to = false
                    var cmd = space
-                   if (is_cmd(c: first_char)) {
+
+            
+            if (is_cmd(cmd: first_char)) {
                        is_implicit_move_to = false;
                        cmd = first_char;
                        i += 1;
@@ -107,6 +109,7 @@ public class SVGPathParser {
                         throw ClipPathError.ParseException("Unexpected number after z (s=\(str))");
                        }
 
+                  
                        if (prev_cmd == M || prev_cmd == m) {
                            // "If a moveto is followed by multiple pairs of coordinates,
                            // the subsequent pairs are treated as implicit lineto commands."
@@ -122,7 +125,7 @@ public class SVGPathParser {
                            cmd = prev_cmd;
                        }
                    } else {
-                    throw ClipPathError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
+                        throw ClipPathError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
                    }
 
                  let absolute = is_absolute(c: cmd);
@@ -517,8 +520,8 @@ public class SVGPathParser {
         }
     }
 
-    private static func is_cmd(c:UInt16) -> Bool {
-        switch (c) {
+    private static func is_cmd(cmd:UInt16) -> Bool {
+        switch (cmd) {
             case M,
              m,
              Z,
@@ -543,6 +546,7 @@ public class SVGPathParser {
         default:
             return false
         }
+
 
     }
     

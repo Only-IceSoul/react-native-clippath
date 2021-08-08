@@ -14,7 +14,7 @@
 
 
 @interface
-RCT_EXTERN_MODULE(ClipPathView,RCTViewManager)
+RCT_EXTERN_MODULE(ClipPath,RCTViewManager)
 
 RCT_EXPORT_VIEW_PROPERTY(path, NSDictionary)
 RCT_EXPORT_VIEW_PROPERTY(pathRotation, NSNumber)

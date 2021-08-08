@@ -32,6 +32,7 @@ public class ViewBox {
         let eHeight = eRect.height;
 
 
+
               // Initialize scale-x to e-width/vb-width.
               var scaleX = eWidth / vbWidth;
 
@@ -97,7 +98,7 @@ public class ViewBox {
               // The transform applied to content contained by the element is given by
               // translate(translate-x, translate-y) scale(scale-x, scale-y).
             
-      
+    
 
         return CGAffineTransform(translationX: translateX, y: translateY).scaledBy(x: scaleX, y: scaleY)
     }

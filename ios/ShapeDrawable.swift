@@ -188,7 +188,7 @@ public class ShapeDrawable: CAShapeLayer {
     //MARK: LAYER SET
     
     @discardableResult
-    public func setSvgPath(d:String,viewBox:[CGFloat] = [0,0,0,0],align:String = "xMidYMid",aspect:ViewBox.AspectRatio = .meet) -> ShapeDrawable{
+    public func setSvgPath(d:String,viewBox:[CGFloat] = [0,0,0,0],align:String = "none",aspect:ViewBox.AspectRatio = .none) -> ShapeDrawable{
         mSvgPath = d
         mSvgAlign = align
         mSvgAspect = aspect
@@ -365,6 +365,7 @@ public class ShapeDrawable: CAShapeLayer {
         mRect.size.width = mBaseRect.width
         mRect.size.height = mBaseRect.height
         mRect.setInset(dx: mInsetX, dy: mInsetY)
+        
     }
     
     private func setupPath(){
@@ -395,14 +396,13 @@ public class ShapeDrawable: CAShapeLayer {
             
             do{
                 mPath = try SVGPathParser.parse(d: mSvgPath)
-           
                 if mVbRect.width > 0 && mVbRect.height > 0 {
                     let trans = ViewBox.transform(vbRect: mVbRect, eRect: mRect, align: mSvgAlign, meetOrSlice: mSvgAspect)
                   
                     mPath.apply(trans)
                 }
             }catch{
-                
+                print("Exception: ",error)
             }
            
         default:
@@ -430,8 +430,8 @@ public class ShapeDrawable: CAShapeLayer {
             
         mPath.apply(t)
         
-        super.path = mPath.cgPath
-        super.shadowPath = mPath.cgPath
+        path = mPath.cgPath
+        shadowPath = mPath.cgPath
     }
     
   

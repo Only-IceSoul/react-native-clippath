@@ -16,6 +16,6 @@ class ClipPath: RCTViewManager {
        return ClipPathView()
      }
    override class func requiresMainQueueSetup() -> Bool {
-        return false
+        return true
     }
 }

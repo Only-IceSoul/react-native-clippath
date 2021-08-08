@@ -21,19 +21,22 @@ class ClipPathView: UIView {
         layer.mask = mDrawable
         mDrawable.setShape(s: .svgPath)
         mDrawable.setStrokeMiter(miter: 4)
+        mDrawable.setFillColor(c: UIColor.white.cgColor)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.mask = mDrawable
         mDrawable.setShape(s: .svgPath)
         mDrawable.setStrokeMiter(miter: 4)
+        mDrawable.setFillColor(c: UIColor.white.cgColor)
     }
     
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
     override var bounds: CGRect{
         didSet{
-            mDrawable.onBoundsChange(bounds)
+            mDrawable.onBoundsChange(self.bounds)
+          
         }
     }
     
@@ -41,20 +44,22 @@ class ClipPathView: UIView {
 
         let d = p?["d"] as? String ?? ""
         let viewBox = p?["viewBox"] as? [CGFloat] ?? [0,0,0,0]
-
         mDrawable.setSvgPath(d: d,viewBox: viewBox,align: "xMidYMid",aspect: .meet)
         mDrawable.invalidateSelf()
+
         
     }
     @objc func setPathRotation(_ r:NSNumber?){
         let rotation = CGFloat(truncating: r ?? 0)
         mDrawable.setPathRotation(degrees: rotation)
         mDrawable.invalidateSelf()
+      
     }
     @objc func setPathScale(_ v:NSNumber?){
-        let s = CGFloat(truncating: v ?? 0)
+        let s = CGFloat(truncating: v ?? 1)
         mDrawable.setPathScale(sx: s, sy:s)
         mDrawable.invalidateSelf()
+
     }
     @objc func setPathTranslation(_ v:[String:Any]?){
 
@@ -68,11 +73,13 @@ class ClipPathView: UIView {
             mDrawable.setPathTranslation(dx: x, dy: y)
         }
         mDrawable.invalidateSelf()
+
      
     }
     
  
           
+  
   
     
   
