@@ -19,6 +19,7 @@ public class ClipPathView extends ViewGroup {
         setClipChildren(false);
         mDrawable.setShape(ShapeDrawable.SVG_PATH);
         mDrawable.setFillColor(Color.WHITE);
+        setLayerType(LAYER_TYPE_HARDWARE,null);
 
     }
 
@@ -38,7 +39,6 @@ public class ClipPathView extends ViewGroup {
 //            mCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
             mBitmap.eraseColor(Color.TRANSPARENT);
             mDrawable.draw(mCanvas);
-            setLayerType(LAYER_TYPE_HARDWARE,mPaint);
             mPaint.setXfermode(mPorterDuffXferMode);
             canvas.drawBitmap(mBitmap,0f,0f,mPaint);
             mPaint.setXfermode(null);
