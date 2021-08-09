@@ -1,7 +1,7 @@
 {
   "name": "react-native-clippathview",
   "title": "React Native ClipPath",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "ClipPath Android Web IOS",
   "main": "index.js",
   "files": [
@@ -29,7 +29,8 @@
     "android",
     "ios",
     "web",
-    "path"
+    "path",
+    "shape"
   ],
   "author": {
     "name": "Juan J LF",

@@ -16,7 +16,6 @@ public class ClipPathView extends ViewGroup {
     private final ShapeDrawable mDrawable = new ShapeDrawable();
     ClipPathView(Context context){
         super(context);
-        setBackground(mDrawable);
         setClipChildren(false);
         mDrawable.setShape(ShapeDrawable.SVG_PATH);
         mDrawable.setFillColor(Color.WHITE);
@@ -54,10 +53,12 @@ public class ClipPathView extends ViewGroup {
         if(mBitmap == null){
             mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
             mCanvas.setBitmap(mBitmap);
+            mDrawable.setBounds(0,0,w,h);
         }else{
             if(mBitmap.getWidth() != w || mBitmap.getHeight() != h){
                 mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
                 mCanvas.setBitmap(mBitmap);
+                mDrawable.setBounds(0,0,w,h);
             }
         }
     }

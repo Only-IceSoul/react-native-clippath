@@ -347,7 +347,9 @@ private RectF mBlurRect = new RectF();
 
                         setupCanvasMatrix();
 
-
+                        int checkpoint = canvas.save();
+                        canvas.concat(mCanvasMatrix);
+                        try {
 
                                 if(mPaintBg.getColor() != Color.TRANSPARENT) {
                                         mBlurRect.set(mBaseRect);
@@ -392,7 +394,9 @@ private RectF mBlurRect = new RectF();
                                         }
 
                                 }
-
+                        } finally {
+                                canvas.restoreToCount(checkpoint);
+                        }
 
 
                 }
@@ -484,13 +488,13 @@ private void setupPath(){
         break;
                 case SVG_PATH :
         try{
-        SVGPathParser.mScale = mDensity;
-        final Path p = SVGPathParser.parse(mSvgPath);
-        mPath.set(p);
-        if (mVbRect.width() > 0f && mVbRect.height() > 0f){
-                 SVGViewBox.transform(mVbRect,mRect,mSvgAlign,mSvgAspect,mVbMatrix);
-                mPath.transform(mVbMatrix);
-        }
+                SVGPathParser.mScale = mDensity;
+                final Path p = SVGPathParser.parse(mSvgPath);
+                mPath.set(p);
+                if (mVbRect.width() > 0f && mVbRect.height() > 0f){
+                         SVGViewBox.transform(mVbRect,mRect,mSvgAlign,mSvgAspect,mVbMatrix);
+                        mPath.transform(mVbMatrix);
+                }
         }catch(Error ignored) {
 
         }
