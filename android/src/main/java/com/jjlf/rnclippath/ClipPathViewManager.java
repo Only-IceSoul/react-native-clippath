@@ -36,18 +36,15 @@ class ClipPathViewManager extends ViewGroupManager<ClipPathView> {
             v[2] = (float) viewBox.getDouble(2);
             v[3] = (float)viewBox.getDouble(3);
         }
-        view.getDrawable().setSvgPath(d,view.getResources().getDisplayMetrics().density, v,"xMidYMid",ShapeDrawable.VIEW_BOX_MEET);
-        view.invalidate();
+        view.setD(d,v);
     }
     @ReactProp(name = "pathRotation",defaultFloat = 0f)
     public void setPathRotation(ClipPathView view , float r){
-        view.getDrawable().setPathRotation(r);
-        view.invalidate();
+       view.setRotation(r);
     }
     @ReactProp(name = "pathScale",defaultFloat = 1f)
     public void setPathScale(ClipPathView view,float v){
-        view.getDrawable().setPathScale(v,v);
-        view.invalidate();
+       view.setScale(v,v);
     }
 
     @ReactProp(name = "pathTranslation")
@@ -56,12 +53,7 @@ class ClipPathViewManager extends ViewGroupManager<ClipPathView> {
         float dy = (float)ModUtil.getDouble(v,"dy",0.0);
         boolean per = ModUtil.getBoolean(v,"percentageValue",false);
 
-        if(per){
-          view.getDrawable().setPathTranslation(dx,dy,0f,0f);
-        }else{
-          view.getDrawable().setPathTranslation(toDip(dx,view),toDip(dy,view));
-        }
-        view.invalidate();
+        view.setTranslation(dx,dy,per);
     }
 
 
