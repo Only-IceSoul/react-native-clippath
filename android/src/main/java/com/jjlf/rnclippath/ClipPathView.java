@@ -35,7 +35,7 @@ public class ClipPathView extends ViewGroup {
         canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
         drawPath(canvas);
         canvas.restore();
-        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && canvas.isHardwareAccelerated()){
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1  && canvas.isHardwareAccelerated()){
             mPaintMask.setXfermode(dstOut);
             int main = canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
             canvas.drawColor(Color.BLACK);
