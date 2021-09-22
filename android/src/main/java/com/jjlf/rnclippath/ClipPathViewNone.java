@@ -14,25 +14,37 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class ClipPathView extends ViewGroup {
+public class ClipPathViewNone extends ViewGroup {
 
     private final Paint mPaintMask = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     public static final PorterDuffXfermode dstIn = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
     public static final PorterDuffXfermode dstOut = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
-    ClipPathView(Context context){
+    private int mBgColor  =  Color.TRANSPARENT;
+
+    ClipPathViewNone(Context context){
         super(context);
         setClipChildren(false);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(Color.WHITE);
-        setLayerType(LAYER_TYPE_HARDWARE,null);
     }
 
 
+    public void setBgColor(int c){
+        if(mBgColor != c){
+            mBgColor = c;
+            invalidate();
+        }
+    }
+
     @Override
     protected void dispatchDraw(Canvas canvas) {
+
+        canvas.drawColor(Color.TRANSPARENT);
+        canvas.saveLayer(0f,0f,getWidth(),getHeight(),null);
+        canvas.drawColor(mBgColor);
         super.dispatchDraw(canvas);
-        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1){
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1 ){
             mPaintMask.setXfermode(dstOut);
             canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
             canvas.drawColor(Color.BLACK);
@@ -46,6 +58,9 @@ public class ClipPathView extends ViewGroup {
             drawPath(canvas);
         }
         canvas.restore();
+        canvas.restore();
+
+
     }
 
 
@@ -125,6 +140,7 @@ public class ClipPathView extends ViewGroup {
         mMatrix.postScale(mScaleX,mScaleY,mPathBounds.centerX(),mPathBounds.centerY());
         mMatrix.postTranslate(transX,transY);
 
+
         int checkpoint = canvas.save();
         canvas.concat(mMatrix);
         try {
@@ -132,6 +148,7 @@ public class ClipPathView extends ViewGroup {
         } finally {
             canvas.restoreToCount(checkpoint);
         }
+
     }
 
 

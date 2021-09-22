@@ -21,4 +21,6 @@ interface ClipPathViewProps extends ViewProps {
 declare class ClipPathComponent extends React.Component<ClipPathViewProps> {}
 declare const ClipPathViewBase: Constructor<NativeMethods> & typeof ClipPathComponent;
 
-export default class ClipPathView extends ClipPathViewBase {}
+export  class ClipPathViewN extends ClipPathViewBase {}
+export  class ClipPathView extends ClipPathViewBase {}
+

@@ -20,6 +20,8 @@ public class ReactNativeClippathPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Arrays.<ViewManager>asList(new ClipPathViewManager());
+        return Arrays.<ViewManager>asList(
+                 new ClipPathViewManagerNone(),
+                new ClipPathViewManager());
     }
 }
