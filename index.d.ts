@@ -4,17 +4,48 @@ import { Constructor, NativeMethods, ViewProps } from "react-native";
 
 interface ClipPathViewProps extends ViewProps {
   
-    path?:{
-        d:string
-        viewBox:number[] 
-    }
-    pathScale?:number
-    pathRotation?: number
-    pathTranslation?:{
-        dx:number,
-        dy:number,
-        percentageValue:boolean
-    }
+    d:string
+    viewBox:number[] 
+    aspect?: 'meet' | 'slice' | 'none'
+    align?:'xMinYMin'|
+    'xMidYMin' |
+    'xMaxYMin' |
+    'xMinYMid' |
+    'xMidYMid' |
+    'xMaxYMid' |
+    'xMinYMax' |
+    'xMidYMax' |
+    'xMaxYMax' |
+    'none'
+
+
+    fillRule?: 'evenodd' | 'nonzero'
+    strokeWidth?:number
+    strokeStart?:number
+    strokeEnd?:number
+    strokeCap?:'butt' | 'round' | 'square'
+    strokeJoin?: 'bevel' | 'miter' | 'round'
+    strokeMiter?:number
+
+    // transformOrder?: "r-s-t" | "r-t-s" | "s-r-t" | "s-t-r" | "t-r-s" | "t-s-r" 
+
+    transX?:number
+    transY?:number
+    transPercentageValue?:boolean
+    
+    rot?:number
+    rotO?:number
+    rotOx?:number
+    rotOy?:number
+    rotPercentageValue?:boolean
+
+    sc?:number
+    scX?:number
+    scY?:number
+    scO?:number
+    scOx?:number
+    scOy?:number
+    scPercentageValue?:boolean
   
 }
 

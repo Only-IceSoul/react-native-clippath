@@ -53,9 +53,5 @@ import ClipPathView from 'react-native-clippathview'
 
 ## Props   
 
-| Name | description | type | default |
-| --- | --- | --- | --- |
-| path | set the path | Object | undefined |
-| pathScale | set the scale | Number | 1  |
-| pathRotation | set the rotation | Number | 0 |
-| pathTranslation | set the translation  | Object | 0 0 |
+[Props](./index.d.ts)
+
