@@ -104,6 +104,14 @@ public class ClipPathView extends ViewGroup {
         }
     }
 
+    protected float mTranslationZ = 0f;
+    public void setTranslateZ(float v) {
+        if(mTranslationZ != v ){
+            mTranslationZ = v;
+            setTranslationZ(mTranslationZ);
+        }
+    }
+
     public void setFillRule(String v) {
         if(!Objects.equals(mProps.mFillRule, v)) {
             mProps.mFillRule = v;

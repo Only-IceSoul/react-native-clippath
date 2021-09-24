@@ -56,6 +56,11 @@ class ClipPathViewManagerNone extends ViewGroupManager<ClipPathViewNone> {
         view.setAspect(p);
     }
 
+   @ReactProp(name = "translateZ",defaultFloat = 0f)
+    public void setTranslateZ(ClipPathViewNone view ,float v) {
+        view.setTranslateZ(v);
+    }
+    
     @ReactProp(name = "fillRule")
     public void setFillRule(ClipPathViewNone view ,String v) {
         view.setFillRule(v == null ? "none" : v);

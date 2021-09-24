@@ -59,6 +59,10 @@ class ClipPathViewManager extends ViewGroupManager<ClipPathView> {
         view.setAspect(p);
     }
 
+  @ReactProp(name = "translateZ",defaultFloat = 0f)
+    public void setTranslateZ(ClipPathView view ,float v) {
+        view.setTranslateZ(v);
+    }
 
     @ReactProp(name = "fillRule")
     public void setFillRule(ClipPathView view ,String v) {
