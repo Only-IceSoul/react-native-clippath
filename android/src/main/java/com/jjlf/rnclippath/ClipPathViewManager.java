@@ -19,7 +19,7 @@ class ClipPathViewManager extends ViewGroupManager<ClipPathView> {
  
     @Override
     public String getName() {
-        return "ClipPath";
+        return "JJSClipPath";
     }
     
     @Override
@@ -66,7 +66,7 @@ class ClipPathViewManager extends ViewGroupManager<ClipPathView> {
 
     }
 
-    @ReactProp(name = "strokeWidth",defaultFloat = 0f)
+    @ReactProp(name = "strokeWidth",defaultFloat = 1f)
     public void setStrokeWith(ClipPathView view ,float v) {
         view.setStrokeWith(v);
 

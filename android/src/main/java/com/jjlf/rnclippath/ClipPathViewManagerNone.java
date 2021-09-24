@@ -16,7 +16,7 @@ class ClipPathViewManagerNone extends ViewGroupManager<ClipPathViewNone> {
  
     @Override
     public String getName() {
-        return "ClipPathNone";
+        return "JJSClipPathNone";
     }
     
     @Override
@@ -60,7 +60,7 @@ class ClipPathViewManagerNone extends ViewGroupManager<ClipPathViewNone> {
     public void setFillRule(ClipPathViewNone view ,String v) {
         view.setFillRule(v == null ? "none" : v);
     }
-    @ReactProp(name = "strokeWidth",defaultFloat = 0f)
+    @ReactProp(name = "strokeWidth",defaultFloat = 1f)
     public void setStrokeWith(ClipPathViewNone view ,float v) {
         view.setStrokeWith(v);
     }

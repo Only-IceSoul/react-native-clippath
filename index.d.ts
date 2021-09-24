@@ -5,7 +5,7 @@ import { Constructor, NativeMethods, ViewProps } from "react-native";
 interface ClipPathViewProps extends ViewProps {
   
     d:string
-    viewBox:number[] 
+    viewBox?:number[] 
     aspect?: 'meet' | 'slice' | 'none'
     align?:'xMinYMin'|
     'xMidYMin' |
@@ -18,6 +18,7 @@ interface ClipPathViewProps extends ViewProps {
     'xMaxYMax' |
     'none'
 
+    translateZ?:number
 
     fillRule?: 'evenodd' | 'nonzero'
     strokeWidth?:number

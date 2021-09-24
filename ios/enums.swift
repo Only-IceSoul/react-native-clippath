@@ -1,14 +1,14 @@
 //
 //  enums.swift
-//  ReactNativeClippath
+//  react-native-drawableview
 //
-//  Created by Juan J LF on 8/8/21.
-//  Copyright © 2021 Facebook. All rights reserved.
+//  Created by Juan J LF on 9/23/21.
 //
 
+import Foundation
 import UIKit
 
-enum ClipPathError: Error {
+enum PathParserError: Error {
     case runtimeError(String)
     case IllegalStateException(String)
     case Exception(String)
@@ -20,28 +20,37 @@ enum ClipPathError: Error {
   
 }
 
- public enum DrawableAxis {
+enum DrawableAxis {
     case x, y , z
 }
 
-public enum DrawableLineCap : String{
+enum DrawableLineCap : String{
     case butt,
          round,
          square
     
-    internal func toTarget() -> CAShapeLayerLineCap
+    func toTarget() -> CAShapeLayerLineCap
     {
         return CAShapeLayerLineCap.init(rawValue: rawValue)
     }
 }
 
+enum GradientDrawableType : String{
+    case axial,
+         radial,
+         conic
+    func toTarget() -> CAGradientLayerType
+    {
+        return CAGradientLayerType(rawValue: rawValue)
+    }
+}
 
-public enum DrawableLineJoin : String{
+enum DrawableLineJoin : String{
     case bevel,
          miter,
          round
     
-    internal func toTarget() -> CAShapeLayerLineJoin
+    func toTarget() -> CAShapeLayerLineJoin
     {
         return CAShapeLayerLineJoin.init(rawValue: rawValue)
     }

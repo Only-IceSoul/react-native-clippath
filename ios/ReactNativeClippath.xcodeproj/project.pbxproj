@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		D0179C8126C06EBC009F188B /* SVGPathParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8026C06EBC009F188B /* SVGPathParser.swift */; };
 		D0179C8426C06EE6009F188B /* SVGViewBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8326C06EE6009F188B /* SVGViewBox.swift */; };
-		D0179C8726C06F44009F188B /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8626C06F44009F188B /* extension.swift */; };
-		D0179C8A26C06FAA009F188B /* ShapeDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8926C06FAA009F188B /* ShapeDrawable.swift */; };
 		D0179C8D26C06FED009F188B /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8C26C06FED009F188B /* enums.swift */; };
-		D0179C9026C07787009F188B /* ClipPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8F26C07787009F188B /* ClipPath.m */; };
-		D0179C9326C077BA009F188B /* ClipPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C9226C077BA009F188B /* ClipPath.swift */; };
+		D0179C9026C07787009F188B /* JJSClipPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179C8F26C07787009F188B /* JJSClipPath.m */; };
+		D0179C9326C077BA009F188B /* JJSClipPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C9226C077BA009F188B /* JJSClipPath.swift */; };
 		D0179C9626C077FC009F188B /* ClipPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0179C9526C077FC009F188B /* ClipPathView.swift */; };
+		D04D4F4F26FD7A2D005DB4D1 /* extension_UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F4A26FD7A2C005DB4D1 /* extension_UIBezierPath.swift */; };
+		D04D4F5026FD7A2D005DB4D1 /* extension_CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F4B26FD7A2C005DB4D1 /* extension_CGFloat.swift */; };
+		D04D4F5126FD7A2D005DB4D1 /* extension_NSAttrString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F4C26FD7A2C005DB4D1 /* extension_NSAttrString.swift */; };
+		D04D4F5226FD7A2D005DB4D1 /* extension_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F4D26FD7A2C005DB4D1 /* extension_UIColor.swift */; };
+		D04D4F5326FD7A2D005DB4D1 /* extension_CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F4E26FD7A2C005DB4D1 /* extension_CGRect.swift */; };
+		D04D4F5726FD7A36005DB4D1 /* TransformProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F5526FD7A36005DB4D1 /* TransformProps.swift */; };
+		D04D4F5826FD7A36005DB4D1 /* CommomProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F5626FD7A36005DB4D1 /* CommomProps.swift */; };
+		D04D4F5B26FD7A51005DB4D1 /* ClipDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D4F5A26FD7A51005DB4D1 /* ClipDrawable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,12 +40,18 @@
 		D0179C7F26C06EBB009F188B /* ReactNativeClippath-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeClippath-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0179C8026C06EBC009F188B /* SVGPathParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPathParser.swift; sourceTree = "<group>"; };
 		D0179C8326C06EE6009F188B /* SVGViewBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGViewBox.swift; sourceTree = "<group>"; };
-		D0179C8626C06F44009F188B /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
-		D0179C8926C06FAA009F188B /* ShapeDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeDrawable.swift; sourceTree = "<group>"; };
 		D0179C8C26C06FED009F188B /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
-		D0179C8F26C07787009F188B /* ClipPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClipPath.m; sourceTree = "<group>"; };
-		D0179C9226C077BA009F188B /* ClipPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipPath.swift; sourceTree = "<group>"; };
+		D0179C8F26C07787009F188B /* JJSClipPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJSClipPath.m; sourceTree = "<group>"; };
+		D0179C9226C077BA009F188B /* JJSClipPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJSClipPath.swift; sourceTree = "<group>"; };
 		D0179C9526C077FC009F188B /* ClipPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipPathView.swift; sourceTree = "<group>"; };
+		D04D4F4A26FD7A2C005DB4D1 /* extension_UIBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_UIBezierPath.swift; sourceTree = "<group>"; };
+		D04D4F4B26FD7A2C005DB4D1 /* extension_CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_CGFloat.swift; sourceTree = "<group>"; };
+		D04D4F4C26FD7A2C005DB4D1 /* extension_NSAttrString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_NSAttrString.swift; sourceTree = "<group>"; };
+		D04D4F4D26FD7A2C005DB4D1 /* extension_UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_UIColor.swift; sourceTree = "<group>"; };
+		D04D4F4E26FD7A2C005DB4D1 /* extension_CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_CGRect.swift; sourceTree = "<group>"; };
+		D04D4F5526FD7A36005DB4D1 /* TransformProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformProps.swift; sourceTree = "<group>"; };
+		D04D4F5626FD7A36005DB4D1 /* CommomProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommomProps.swift; sourceTree = "<group>"; };
+		D04D4F5A26FD7A51005DB4D1 /* ClipDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipDrawable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +76,31 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				D0179C8926C06FAA009F188B /* ShapeDrawable.swift */,
-				D0179C8F26C07787009F188B /* ClipPath.m */,
+				D04D4F4926FD7A2C005DB4D1 /* extensions */,
+				D0179C8F26C07787009F188B /* JJSClipPath.m */,
 				D0179C9526C077FC009F188B /* ClipPathView.swift */,
-				D0179C9226C077BA009F188B /* ClipPath.swift */,
+				D0179C9226C077BA009F188B /* JJSClipPath.swift */,
 				D0179C8C26C06FED009F188B /* enums.swift */,
-				D0179C8626C06F44009F188B /* extension.swift */,
+				D04D4F5626FD7A36005DB4D1 /* CommomProps.swift */,
+				D04D4F5526FD7A36005DB4D1 /* TransformProps.swift */,
 				D0179C8326C06EE6009F188B /* SVGViewBox.swift */,
 				D0179C8026C06EBC009F188B /* SVGPathParser.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				D0179C7F26C06EBB009F188B /* ReactNativeClippath-Bridging-Header.h */,
+				D04D4F5A26FD7A51005DB4D1 /* ClipDrawable.swift */,
 			);
+			sourceTree = "<group>";
+		};
+		D04D4F4926FD7A2C005DB4D1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D04D4F4A26FD7A2C005DB4D1 /* extension_UIBezierPath.swift */,
+				D04D4F4B26FD7A2C005DB4D1 /* extension_CGFloat.swift */,
+				D04D4F4C26FD7A2C005DB4D1 /* extension_NSAttrString.swift */,
+				D04D4F4D26FD7A2C005DB4D1 /* extension_UIColor.swift */,
+				D04D4F4E26FD7A2C005DB4D1 /* extension_CGRect.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,13 +161,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0179C8726C06F44009F188B /* extension.swift in Sources */,
 				D0179C8D26C06FED009F188B /* enums.swift in Sources */,
-				D0179C9026C07787009F188B /* ClipPath.m in Sources */,
-				D0179C9326C077BA009F188B /* ClipPath.swift in Sources */,
-				D0179C8A26C06FAA009F188B /* ShapeDrawable.swift in Sources */,
+				D04D4F5826FD7A36005DB4D1 /* CommomProps.swift in Sources */,
+				D04D4F5226FD7A2D005DB4D1 /* extension_UIColor.swift in Sources */,
+				D04D4F5B26FD7A51005DB4D1 /* ClipDrawable.swift in Sources */,
+				D0179C9026C07787009F188B /* JJSClipPath.m in Sources */,
+				D0179C9326C077BA009F188B /* JJSClipPath.swift in Sources */,
 				D0179C9626C077FC009F188B /* ClipPathView.swift in Sources */,
 				D0179C8126C06EBC009F188B /* SVGPathParser.swift in Sources */,
+				D04D4F4F26FD7A2D005DB4D1 /* extension_UIBezierPath.swift in Sources */,
+				D04D4F5726FD7A36005DB4D1 /* TransformProps.swift in Sources */,
+				D04D4F5126FD7A2D005DB4D1 /* extension_NSAttrString.swift in Sources */,
+				D04D4F5326FD7A2D005DB4D1 /* extension_CGRect.swift in Sources */,
+				D04D4F5026FD7A2D005DB4D1 /* extension_CGFloat.swift in Sources */,
 				D0179C8426C06EE6009F188B /* SVGViewBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

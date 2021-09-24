@@ -1,15 +1,15 @@
 //
 //  SVGPathParser.swift
-//  ReactNativeClippath
+//  react-native-drawableview
 //
-//  Created by Juan J LF on 8/8/21.
-//  Copyright © 2021 Facebook. All rights reserved.
+//  Created by Juan J LF on 9/23/21.
 //
 
+import Foundation
 import UIKit
 
 
-public class SVGPathParser {
+class SVGPathParser {
     
 
     private static var i :Int = 0;
@@ -58,7 +58,7 @@ public class SVGPathParser {
     private static let plus = "+".utf16.first!
     private static let x = "x".utf16.first!
     
-    public static func parse( d:String?) throws -> UIBezierPath {
+     static func parse( d:String?) throws -> UIBezierPath {
         mPath = UIBezierPath()
         if(d == nil ){
             return mPath;
@@ -91,7 +91,7 @@ public class SVGPathParser {
 
             if (!has_prev_cmd && first_char != M && first_char != m) {
                        // The first segment must be a MoveTo.
-                throw ClipPathError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
+                throw PathParserError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
             }
 
                    // TODO: simplify
@@ -106,7 +106,7 @@ public class SVGPathParser {
                    } else if (is_number_start(c: first_char) && has_prev_cmd) {
                        if (prev_cmd == Z || prev_cmd == z) {
                            // ClosePath cannot be followed by a number.
-                        throw ClipPathError.ParseException("Unexpected number after z (s=\(str))");
+                        throw PathParserError.ParseException("Unexpected number after z (s=\(str))");
                        }
 
                   
@@ -125,7 +125,7 @@ public class SVGPathParser {
                            cmd = prev_cmd;
                        }
                    } else {
-                        throw ClipPathError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
+                        throw PathParserError.ParseException("Unexpected character \(first_char) (i=\(i), s=\(str)");
                    }
 
                  let absolute = is_absolute(c: cmd);
@@ -210,7 +210,7 @@ public class SVGPathParser {
                            break;
                     
                        default:
-                       throw ClipPathError.ParseException("Unexpected comand \(cmd) (s=\(str)");
+                       throw PathParserError.ParseException("Unexpected comand \(cmd) (s=\(str)");
                        
                    }
 
@@ -351,7 +351,7 @@ public class SVGPathParser {
                return;
            }
 
-        let rad =  rotation.toRadians()
+        let rad =  rotation.toRadians() 
         let coss =  cos(rad);
         let sinn =  sin(rad);
            x -= tX;
@@ -576,7 +576,7 @@ public class SVGPathParser {
                break;
            
            default:
-           throw ClipPathError.ParseException("Unexpected flag \(c) (i=\(i), s=\(str))");
+           throw PathParserError.ParseException("Unexpected flag \(c) (i=\(i), s=\(str))");
        }
 
         return c == one;
@@ -584,7 +584,7 @@ public class SVGPathParser {
 
     private static func parse_list_number() throws -> CGFloat{
          if (i == lenght) {
-            throw ClipPathError.ParseException("Unexpected end (s=\(str))")
+            throw PathParserError.ParseException("Unexpected end (s=\(str))")
          }
 
         let n = try parse_number();
@@ -598,7 +598,7 @@ public class SVGPathParser {
           skip_spaces();
 
           if (i == lenght) {
-            throw ClipPathError.ParseException("Unexpected end (s=\(str))")
+            throw PathParserError.ParseException("Unexpected end (s=\(str))")
           }
 
         let start = i;
@@ -618,7 +618,7 @@ public class SVGPathParser {
                 c = str.character(at:i);
               }
         } else if (c != dot) {
-           throw ClipPathError.ParseException("Invalid number formating character \(c) (i=\(i), s=\(str)")
+           throw PathParserError.ParseException("Invalid number formating character \(c) (i=\(i), s=\(str)")
           }
 
           // Consume fraction.
@@ -643,14 +643,14 @@ public class SVGPathParser {
                   } else if (c >= zero && c <= nine) {
                       skip_digits();
                   } else {
-                    throw ClipPathError.ParseException("Invalid number formating character \(c) (i=\(i), s=\(str)")
+                    throw PathParserError.ParseException("Invalid number formating character \(c) (i=\(i), s=\(str)")
                   }
               }
           }
 
         let num = str.substring(with: NSMakeRange(start, i - start))
         guard let n = Double(num) else {
-           throw ClipPathError.ParseException("Invalid number \(num) (start=\(start), i=\(i), s=\(str))")
+           throw PathParserError.ParseException("Invalid number \(num) (start=\(start), i=\(i), s=\(str))")
         }
 
       
