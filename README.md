@@ -61,12 +61,12 @@ import {ClipPathView , ClipPathViewN } from 'react-native-clippathview'
 | align | the aligment     | String | xMidYMid |
 | aspect | aspect ratio   | String | meet |
 | fillRule | determines what side of a path is inside a shape  | String | nonzero |
-| strokeWidth | defines the thickness of a line | Number | 1 
-| strokeCap | line cap | string | 'butt' |
-| strokeJoin | line join | string | 'miter' |
-| strokeMiter | control the behavior of miter | Number | 4 |
-| strokeStart | the start | Number | 0 |
-| strokeEnd | the end | Number | 1 |
+| strokeWidth | defines the thickness of a line (mobile) | Number | 1 
+| strokeCap | line cap | string (mobile) | 'butt' |
+| strokeJoin | line join | string  (mobile)| 'miter' |
+| strokeMiter | control the behavior of miter (mobile) | Number | 4 |
+| strokeStart | the start | Number (mobile) | 0 |
+| strokeEnd | the end | Number  (mobile) | 1 |
 
 <br>
 

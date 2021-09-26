@@ -5,8 +5,8 @@
 import { Platform,requireNativeComponent } from 'react-native';
 import ClipPathWeb from './src/ClipPathWeb'
 
-const ClipPathMobile =  requireNativeComponent('JJSClipPath',null)
-const ClipPathMobileN = requireNativeComponent('JJSClipPathNone',null) 
+const ClipPathMobile = requireNativeComponent ? requireNativeComponent('JJSClipPath',null) : null
+const ClipPathMobileNone = requireNativeComponent ? requireNativeComponent('JJSClipPathNone',null) : null
 
-export const ClipPathView = Platform.OS == 'android' || Platform.OS == 'ios' ? ClipPathMobile : ClipPathWeb
-export const ClipPathViewN = Platform.OS == 'android' ? ClipPathMobileN : (Platform.OS == 'ios' ? ClipPathMobile : ClipPathWeb)
+export const ClipPathViewH = Platform.OS == 'android' || Platform.OS == 'ios' ? ClipPathMobile : ClipPathWeb
+export const ClipPathView = Platform.OS == 'android' ? ClipPathMobileNone : (Platform.OS == 'ios' ? ClipPathMobile : ClipPathWeb)
