@@ -35,7 +35,7 @@ class ClipPathViewManagerNone extends ViewGroupManager<ClipPathViewNone> {
     }
     @ReactProp(name = "viewBox")
     public void setViewBox(ClipPathViewNone view, ReadableArray viewBox){
-        float [] v = {0f,0f,0f,0f};
+        float [] v = {0f,0f,-1f,-1f};
         if(viewBox != null) {
             v[0] = (float) viewBox.getDouble(0);
             v[1] = (float) viewBox.getDouble(1);

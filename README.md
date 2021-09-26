@@ -29,9 +29,9 @@ web: svg
 add a .swift file
 
 # Usage
-ClipPathViewN (Android Layer type none)
+ClipPathViewH (Android Layer type Hardware)  
 ```javascript
-import {ClipPathView , ClipPathViewN } from 'react-native-clippathview'
+import {ClipPathView , ClipPathViewH } from 'react-native-clippathview'
 
 // TODO: What to do with the module?
     <ClipPathView style={{backgroundColor:'green'}} 
