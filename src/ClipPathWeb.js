@@ -147,7 +147,23 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
         ...rest 
     } = props
 
-    const styleObject = StyleSheet.flatten(style)
+    const styleObject = useMemo(()=>{
+        if (typeof style === 'number') return StyleSheet.flatten(style) 
+        if(Array.isArray(style)){
+           var styleJs = {}
+           style.forEach((v)=>{
+             if(typeof v === 'number'){
+                let ss = StyleSheet.flatten(style) 
+                Object.assign(styleJs,ss)
+             }else{
+               Object.assign(styleJs,v)
+             }
+           })
+ 
+           return styleJs
+        }
+        return style
+      },[style])
 
     const path = d === undefined ? "" : d
     const vb = viewBox === undefined ? [0,0,-1,-1] : viewBox
