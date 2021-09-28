@@ -2,6 +2,7 @@ import React from "react"
 import { useMemo } from "react"
 import { useRef } from "react"
 import { useLayoutEffect, useState } from "react"
+import { StyleSheet } from "react-native";
 
 
 const Helper = require('svgpath');
@@ -101,7 +102,7 @@ const viewBoxEvaluator = (value, start,end) => {
 
 
 
-const ClipPathView =  React.forwardRef((props,ref) =>{
+const ClipPathWeb  =  React.forwardRef((props,ref) =>{
     const refAlt =  useRef(null)
     const myRef = ref || refAlt
 
@@ -142,9 +143,11 @@ const ClipPathView =  React.forwardRef((props,ref) =>{
         scOy,
         scPercentageValue,
     
-       
+        style,
         ...rest 
     } = props
+
+    const styleObject = StyleSheet.flatten(style)
 
     const path = d === undefined ? "" : d
     const vb = viewBox === undefined ? [0,0,-1,-1] : viewBox
@@ -292,15 +295,14 @@ const ClipPathView =  React.forwardRef((props,ref) =>{
         }
     })
 
+
     return(
         <>
-            <div {...rest} ref={myRef} style={{...props.style,clipPath:`${d.length > 0 ? 'url(#clipPathViewjjfl)' : ''}`, zIndex:zIndex}} >
+            <div {...rest} ref={myRef} style={{...styleObject,clipPath:`${d.length > 0 ? 'url(#clipPathViewjjfl)' : ''}`, zIndex:zIndex}} >
 
             </div>
-            <svg style={{width:0,height:0}}
-      
-            >
-                <defs>
+            <svg  style={{width:0,height:0}}>
+            <defs>
                     <clipPath id="clipPathViewjjfl" 
                     clipPathUnits="objectBoundingBox" 
             
@@ -311,9 +313,10 @@ const ClipPathView =  React.forwardRef((props,ref) =>{
                     </clipPath>
                 </defs>
             </svg>
+         
         </>
     )
 })
 
 
-export default ClipPathView
+export default ClipPathWeb

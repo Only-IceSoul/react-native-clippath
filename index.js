@@ -1,12 +1,7 @@
 // main index.js
+import ClipPath from 'react-native-clippathview/src/ClipPath'
+import ClipPathH from 'react-native-clippathview/src/ClipPathH'
 
 
-
-import { Platform,requireNativeComponent } from 'react-native';
-import ClipPathWeb from './src/ClipPathWeb'
-
-const ClipPathMobile = requireNativeComponent ? requireNativeComponent('JJSClipPath',null) : null
-const ClipPathMobileNone = requireNativeComponent ? requireNativeComponent('JJSClipPathNone',null) : null
-
-export const ClipPathViewH = Platform.OS == 'android' || Platform.OS == 'ios' ? ClipPathMobile : ClipPathWeb
-export const ClipPathView = Platform.OS == 'android' ? ClipPathMobileNone : (Platform.OS == 'ios' ? ClipPathMobile : ClipPathWeb)
+export const ClipPathViewH = ClipPathH
+export const ClipPathView = ClipPath
