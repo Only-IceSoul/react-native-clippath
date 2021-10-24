@@ -379,13 +379,7 @@ public class ClipPathViewNone extends ViewGroup {
     private void props(){
         mPath.setFillType(mProps.getFillRule());
 
-        float sw ;
-        if (validateViewBox()) {
-            float size = Math.max( mRectPath.width(), mRectPath.height() );
-            sw =  mProps.getStrokeWidth() / Math.max( mRectVb.width(), mRectVb.height() ) * size;
-        }else{
-            sw = toDip(mProps.getStrokeWidth());
-        }
+        float sw = validateViewBox() ?  ModUtil.viewBoxToMax(mProps.getStrokeWidth(),mRectVb,mRectPath.width(),mRectPath.height()) : toDip(mProps.getStrokeWidth());
         mPaintStroke.setStrokeWidth(sw);
         mPaintStroke.setStrokeCap(mProps.getStrokeCap());
         mPaintStroke.setStrokeJoin(mProps.getStrokeJoin());
