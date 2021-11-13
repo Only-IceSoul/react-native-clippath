@@ -9,9 +9,6 @@ web: svg
 ## Getting started
 
 `$ npm install react-native-clippathview --save`
-
-### Mostly automatic installation
-
 `$ react-native link react-native-clippathview`  
   
 ### Yarn
@@ -56,6 +53,7 @@ import {ClipPathView , ClipPathViewH } from 'react-native-clippathview'
 
 | Name | description | type | default |
 | --- | --- | --- | --- |
+| svgKey | Each view must have a different key  | String | "" |
 | d | The shape, defined by a series of commands   | String | "" |
 | viewBox | defines the position and dimension, in user space    | Array[Number] (4) | undefined |
 | align | the aligment     | String | xMidYMid |

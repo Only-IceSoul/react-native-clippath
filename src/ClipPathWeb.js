@@ -107,6 +107,8 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
     const myRef = ref || refAlt
 
     const {
+
+        svgKey,
         d,
         viewBox,
         aspect,
@@ -165,6 +167,8 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
         return style
       },[style])
 
+
+    const userKey = svgKey === undefined ? "" : svgKey
     const path = d === undefined ? "" : d
     const vb = viewBox === undefined ? [0,0,-1,-1] : viewBox
     const asp = aspect === undefined ? "meet" : aspect
@@ -311,15 +315,16 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
         }
     })
 
+    const keyClip = `clipPathViewjjfl${userKey}`
 
     return(
         <>
-            <div {...rest} ref={myRef} style={{...styleObject,clipPath:`${d.length > 0 ? 'url(#clipPathViewjjfl)' : ''}`, zIndex:zIndex}} >
+            <div {...rest} ref={myRef} style={{...styleObject,clipPath:`${d.length > 0 ? `url(#${keyClip})`  : ''}`, zIndex:zIndex}} >
 
             </div>
             <svg  style={{width:0,height:0}}>
             <defs>
-                    <clipPath id="clipPathViewjjfl" 
+                    <clipPath id={keyClip} 
                     clipPathUnits="objectBoundingBox" 
             
                     >
