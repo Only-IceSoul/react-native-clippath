@@ -202,7 +202,9 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
     const [bounds,setbounds] = useState({w:0,h:0})
     
     const finalPath = useMemo(()=>{
-        if(d.length > 0 && bounds.w > 0 && bounds.h > 0){
+   
+        if(path.length > 0 && bounds.w > 0 && bounds.h > 0){
+    
             var vbLeft = vb[0]
             var vbTop = vb[1]
             var vbWidth = vb[2]
@@ -308,8 +310,8 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
 },[bounds,dx,dy,scaleY,scaleX,scaleOX,scaleOY,path,rotation,rotationOX,rotationOY,asp,alg,vb,scalePercent,transPercent,rotationPercent])
 
     useLayoutEffect(()=>{
-        let w = myRef.current.clientWidth
-        let h = myRef.current.clientHeight
+        let w = myRef.current?.clientWidth || 0
+        let h = myRef.current?.clientHeight || 0
         if(w !== bounds.w || h !== bounds.h  ){
             setbounds({w:w,h:h})
         }
@@ -319,7 +321,7 @@ const ClipPathWeb  =  React.forwardRef((props,ref) =>{
 
     return(
         <>
-            <div {...rest} ref={myRef} style={{...styleObject,clipPath:`${d.length > 0 ? `url(#${keyClip})`  : ''}`, zIndex:zIndex}} >
+            <div {...rest} ref={myRef} style={{...styleObject,clipPath:`${path.length > 0 ? `url(#${keyClip})`  : ''}`, zIndex:zIndex}} >
 
             </div>
             <svg  style={{width:0,height:0}}>

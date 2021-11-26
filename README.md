@@ -4,11 +4,12 @@ android: api 21+
 ios : 10.0+   
 web: svg    
   
-<img src="./src/demo.jpg" width="200">
+ Example --> [Demo](https://github.com/Only-IceSoul/canal/tree/master/react-native/LiquidSwipe/ClipPath)   
+<img src="./src/demo.jpg" width="300">
 
 ## Getting started
 
-`$ npm install react-native-clippathview --save`
+`$ npm install react-native-clippathview --save`  
 `$ react-native link react-native-clippathview`  
   
 ### Yarn

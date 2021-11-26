@@ -3,8 +3,8 @@ import { Constructor, NativeMethods, ViewProps } from "react-native";
 
 
 interface ClipPathViewProps extends ViewProps {
-    svgKey:string // web
-    d:string
+    svgKey?:string // web
+    d?:string
     viewBox?:number[] 
     aspect?: 'meet' | 'slice' | 'none'
     align?:'xMinYMin'|
